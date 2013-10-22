@@ -180,3 +180,8 @@ public class Testing {
         System.out.println("total de tortas ricas = "+total);
    }
 }
+
+
+//total de combinaciones in-in-in + combinaciones= 60
+//total de combinaciones in-in-in + combinaciones + masita= 180
+//total de tortas ricas = 240
