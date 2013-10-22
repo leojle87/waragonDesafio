@@ -1,0 +1,182 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package testing;
+
+import java.util.ArrayList;
+import java.util.Vector;
+
+/**
+ *
+ * @author u564470
+ */
+public class Testing {
+
+    /**
+     * @param args the command line arguments
+     */
+    private void generateR(String source, String partial,Vector out)
+   {
+     String newPartial=new String(partial);
+     String newSource;
+     if (source.length()==0)
+     {
+       out.addElement(newPartial);
+       return;
+     }
+     for(int i=0;i<source.length();i++)
+     {
+       newPartial=partial.concat(source.substring(i,i+1));
+       newSource=source.substring(0,i);
+       if (i<(source.length()+1))
+         newSource=newSource.concat(source.substring(i+1,source.length()));
+       generateR(newSource, newPartial, out);
+     }
+   }
+   
+   public Vector generate(String source)
+   {
+     Vector out=new Vector();
+     String partial=new String();
+     generateR(source, partial, out);
+     return out;
+   }
+
+   public static void main(String[] args)
+   {
+     Testing a= new Testing();
+      //porque siempre tiene q haber por lo menos 3 ingredientes alineados
+     Vector v = a.generate("DDDFFF");
+     Vector v2= a.generate("DDDCCC");
+     Vector v3= a.generate("FFFCCC");
+     
+     //con la masita
+     Vector v4 = a.generate("DDDFFM");
+     Vector v5 = a.generate("DDDCCM");
+     Vector v6 = a.generate("FFFCCM");
+     
+     String combinacionesGuardadasv1 = ""; 
+     int contadorInternov1 = 0;
+     ArrayList <String> combinacionesListav1= new ArrayList <String>();
+     combinacionesListav1.add("");
+     for(int i=0;i<v.size();i++) 
+     {
+        String combinacionesNuevas;
+      // System.out.println((String)v.elementAt(i)+ "  "+ i);
+       combinacionesNuevas = (String)v.elementAt(i);
+       
+       if (!combinacionesListav1.contains(combinacionesNuevas)) {
+           contadorInternov1++; 
+       }
+       combinacionesGuardadasv1 = (String)v.elementAt(i);
+       combinacionesListav1.add(combinacionesGuardadasv1);
+        
+     }      
+     
+     
+      String combinacionesGuardadasv2 = ""; 
+     int contadorInternov2 = 0;
+     ArrayList <String> combinacionesListav2= new ArrayList <String>();
+     combinacionesListav2.add("");
+        for(int i=0;i<v2.size();i++) 
+     {
+        String combinacionesNuevas;
+      // System.out.println((String)v.elementAt(i)+ "  "+ i);
+       combinacionesNuevas = (String)v2.elementAt(i);
+       
+       if (!combinacionesListav2.contains(combinacionesNuevas)) {
+           contadorInternov2++; 
+       }
+       combinacionesGuardadasv2 = (String)v2.elementAt(i);
+       combinacionesListav2.add(combinacionesGuardadasv2);
+        
+     }   
+        
+        
+     String combinacionesGuardadasv3 = ""; 
+     int contadorInternov3 = 0;
+     ArrayList <String> combinacionesListav3= new ArrayList <String>();
+     combinacionesListav3.add("");
+        for(int i=0;i<v3.size();i++) 
+     {
+        String combinacionesNuevas;
+      // System.out.println((String)v.elementAt(i)+ "  "+ i);
+       combinacionesNuevas = (String)v3.elementAt(i); 
+       if (!combinacionesListav3.contains(combinacionesNuevas)) {
+           contadorInternov3++;  
+       }
+       combinacionesGuardadasv3 = (String)v3.elementAt(i);
+       combinacionesListav3.add(combinacionesGuardadasv3);
+        
+     }   
+        
+        
+        String combinacionesGuardadasv4 = ""; 
+     int contadorInternov4 = 0;
+     ArrayList <String> combinacionesListav4= new ArrayList <String>();
+     combinacionesListav4.add("");
+        for(int i=0;i<v4.size();i++) 
+     {
+        String combinacionesNuevas;
+      // System.out.println((String)v.elementAt(i)+ "  "+ i);
+       combinacionesNuevas = (String)v4.elementAt(i); 
+       if (!combinacionesListav4.contains(combinacionesNuevas)) {
+           contadorInternov4++;  
+       }
+       combinacionesGuardadasv4 = (String)v4.elementAt(i);
+       combinacionesListav4.add(combinacionesGuardadasv4);
+        
+     }   
+        
+        
+        
+        String combinacionesGuardadasv5 = ""; 
+     int contadorInternov5 = 0;
+     ArrayList <String> combinacionesListav5= new ArrayList <String>();
+     combinacionesListav5.add("");
+        for(int i=0;i<v5.size();i++) 
+     {
+        String combinacionesNuevas;
+      // System.out.println((String)v.elementAt(i)+ "  "+ i);
+       combinacionesNuevas = (String)v5.elementAt(i); 
+       if (!combinacionesListav5.contains(combinacionesNuevas)) {
+           contadorInternov5++;  
+       }
+       combinacionesGuardadasv5 = (String)v5.elementAt(i);
+       combinacionesListav5.add(combinacionesGuardadasv5);
+        
+     }   
+        
+        
+        String combinacionesGuardadasv6 = ""; 
+     int contadorInternov6 = 0;
+     ArrayList <String> combinacionesListav6= new ArrayList <String>();
+     combinacionesListav6.add("");
+        for(int i=0;i<v6.size();i++) 
+     {
+        String combinacionesNuevas;
+      // System.out.println((String)v.elementAt(i)+ "  "+ i);
+       combinacionesNuevas = (String)v6.elementAt(i); 
+       if (!combinacionesListav6.contains(combinacionesNuevas)) {
+           contadorInternov6++;  
+       }
+       combinacionesGuardadasv6 = (String)v6.elementAt(i);
+       combinacionesListav6.add(combinacionesGuardadasv6);
+        
+     }  
+        
+        int total = contadorInternov1 +
+                contadorInternov2 +
+                contadorInternov3 +
+                contadorInternov4 +
+                contadorInternov5 +
+                contadorInternov6;
+        int totalIngredientes = contadorInternov1+ contadorInternov2+contadorInternov3;
+        int totalMasitas = contadorInternov4 +  contadorInternov5 +  contadorInternov6;
+        System.out.println("total de combinaciones in-in-in + combinaciones= " +totalIngredientes);
+         System.out.println("total de combinaciones in-in-in + combinaciones + masita= " +totalMasitas);
+        
+        System.out.println("total de tortas ricas = "+total);
+   }
+}
